@@ -22,7 +22,7 @@ func detectSectionStart(underlineChars: String = "=-~_+'\"") -> Parser<Character
 
         // check that second line only contains the underline
         let c = cursor.char
-        guard underlineChars.characters.contains(c) else {
+        guard underlineChars.contains(c) else {
             throw ParserError.notFound(position: input.position)
         }
         var count = 1

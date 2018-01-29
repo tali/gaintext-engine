@@ -17,7 +17,7 @@ import Engine
 /// lines which are prefixed by the given string.
 func prefixedLines(prefix: String) -> Parser<[Line]> {
     assert(!prefix.isEmpty)
-    let count = prefix.characters.count
+    let count = prefix.count
     return Parser { input in
         var cursor = input
         var lines: [Line] = []
