@@ -9,20 +9,10 @@
 //
 
 /// Key to identify parser results.
-struct CacheKey {
+struct CacheKey: Hashable {
     let cache: ObjectIdentifier
     let position: Position
     let startOfWord: Bool
-}
-extension CacheKey: Hashable {
-    var hashValue: Int {
-        return cache.hashValue ^ position.hashValue
-    }
-    static func ==(lhs: CacheKey, rhs: CacheKey) -> Bool {
-        return lhs.position == rhs.position
-            && lhs.cache == rhs.cache
-            && lhs.startOfWord == rhs.startOfWord
-    }
 }
 
 /// Stored parser result.
